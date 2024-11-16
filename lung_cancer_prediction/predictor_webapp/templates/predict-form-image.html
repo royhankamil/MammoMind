@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Image Upload</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/form-image.css'%}">
 </head>
+<header>
+    <div class="logo">MetaBlog</div>
+    <nav>
+        <a href="/imagepredict/">Predict From Ultrasound Image</a>
+        <a href="/formpredict/">Predict From Param</a>
+        <a href="/article/">Guide Article</a>
+        
+    </nav>
+</header>
+
 <body>
     <h1>Upload Patient Image</h1>
     <form action="#" method="POST" id="patient-form" enctype="multipart/form-data">
