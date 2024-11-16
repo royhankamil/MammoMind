@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Fitur Prediksi Kanker Payudara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .fitur {
+            margin-bottom: 20px;
+        }
+        .fitur h3 {
+            margin-bottom: 5px;
+        }
+        .deskripsi {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dokumentasi Fitur Prediksi Kanker Payudara</h1>
+    <p>Halaman ini menjelaskan fitur-fitur yang digunakan dalam prediksi kanker payudara berdasarkan dataset Fine Needle Aspirate (FNA). Setiap fitur menggambarkan karakteristik inti sel secara terperinci.</p>
+    
+    <h2>Fitur Mean</h2>
+    <div class="fitur">
+        <h3>1. Radius Mean</h3>
+        <p class="deskripsi">Fitur ini menunjukkan rata-rata jarak dari pusat inti sel ke titik-titik pada perimeter. Semakin besar radius, semakin besar kemungkinan perubahan abnormal dalam struktur inti sel. Radius yang tinggi seringkali menjadi indikasi adanya pertumbuhan sel yang tidak terkontrol.</p>
+    </div>
+    <div class="fitur">
+        <h3>2. Texture Mean</h3>
+        <p class="deskripsi">Standar deviasi dari nilai skala abu-abu menggambarkan tingkat variasi dalam tekstur inti sel. Tekstur yang tidak merata dapat mengindikasikan adanya perubahan patologis. Data ini membantu mendeteksi ketidakteraturan pada permukaan inti sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>3. Perimeter Mean</h3>
+        <p class="deskripsi">Rata-rata panjang perimeter inti sel digunakan untuk mengukur ukuran dan bentuk sel. Sel-sel kanker sering kali memiliki perimeter yang lebih besar dan tidak teratur dibandingkan dengan sel sehat. Data ini relevan dalam menganalisis pertumbuhan sel yang abnormal.</p>
+    </div>
+    <div class="fitur">
+        <h3>4. Area Mean</h3>
+        <p class="deskripsi">Fitur ini menunjukkan rata-rata luas area inti sel. Area yang besar dapat mengindikasikan proliferasi sel yang tidak normal. Luas yang lebih besar sering ditemukan pada sel-sel dengan sifat kanker.</p>
+    </div>
+    <div class="fitur">
+        <h3>5. Smoothness Mean</h3>
+        <p class="deskripsi">Smoothness menggambarkan variasi lokal pada panjang radius inti sel. Ketidakteraturan permukaan sering kali menjadi indikator kanker. Permukaan yang lebih kasar atau tidak rata mencerminkan perubahan struktural yang mencurigakan.</p>
+    </div>
+    <div class="fitur">
+        <h3>6. Compactness Mean</h3>
+        <p class="deskripsi">Kekompakan dihitung menggunakan rumus: (perimeter² / area) - 1.0. Kekompakan yang tinggi sering ditemukan pada sel dengan struktur abnormal. Fitur ini membantu membedakan sel sehat dari sel kanker berdasarkan bentuknya.</p>
+    </div>
+    <div class="fitur">
+        <h3>7. Concavity Mean</h3>
+        <p class="deskripsi">Fitur ini mengukur tingkat keparahan bagian cekung pada kontur inti sel. Bagian cekung yang lebih besar sering kali menjadi tanda pertumbuhan sel yang tidak teratur. Data ini penting untuk memahami perubahan bentuk inti sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>8. Concave Points Mean</h3>
+        <p class="deskripsi">Menghitung jumlah titik cekung pada kontur inti sel. Titik cekung yang lebih banyak menunjukkan struktur sel yang lebih kompleks dan abnormal. Hal ini sering terkait dengan sifat invasif sel kanker.</p>
+    </div>
+    <div class="fitur">
+        <h3>9. Symmetry Mean</h3>
+        <p class="deskripsi">Mengukur tingkat simetri inti sel. Sel sehat biasanya memiliki simetri yang tinggi, sementara sel kanker cenderung asimetris. Data ini membantu mengidentifikasi perubahan dalam bentuk sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>10. Fractal Dimension Mean</h3>
+        <p class="deskripsi">Dimensi fraktal digunakan untuk mengukur kompleksitas kontur inti sel. Fitur ini memberikan informasi tentang bagaimana struktur sel berkembang. Nilai yang lebih tinggi sering ditemukan pada sel kanker dengan kontur tidak teratur.</p>
+    </div>
+
+    <h2>Fitur Standard Error</h2>
+    <div class="fitur">
+        <h3>11. Radius SE</h3>
+        <p class="deskripsi">Mengukur standar error pada pengukuran radius inti sel. Fitur ini menggambarkan variabilitas pengukuran yang membantu memprediksi perubahan abnormal. Standar error yang tinggi dapat mengindikasikan heterogenitas pada ukuran sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>12. Texture SE</h3>
+        <p class="deskripsi">Standar error pada pengukuran tekstur inti sel membantu mengidentifikasi variasi permukaan. Ketidakteraturan yang tinggi sering menunjukkan perubahan patologis pada sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>13. Perimeter SE</h3>
+        <p class="deskripsi">Mengukur standar error pada perimeter inti sel. Hal ini memberikan indikasi ketidakseragaman pada panjang perimeter. Variasi yang signifikan bisa menjadi tanda aktivitas seluler abnormal.</p>
+    </div>
+    <div class="fitur">
+        <h3>14. Area SE</h3>
+        <p class="deskripsi">Standar error pada pengukuran luas inti sel. Luas yang tidak seragam dapat menjadi indikator awal adanya proliferasi sel kanker. Nilai ini memberikan wawasan tentang variasi ukuran inti sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>15. Smoothness SE</h3>
+        <p class="deskripsi">Mengukur standar error pada variasi lokal panjang radius inti sel. Standar error yang tinggi menunjukkan adanya ketidakteraturan permukaan. Hal ini membantu mendeteksi perubahan pada struktur sel yang sulit diamati langsung.</p>
+    </div>
+    <div class="fitur">
+        <h3>16. Compactness SE</h3>
+        <p class="deskripsi">Standar error pada kekompakan inti sel memberikan informasi tentang variasi bentuk sel. Nilai error yang lebih besar dapat mengindikasikan perubahan struktural yang signifikan. Kekompakan yang bervariasi sering kali terlihat pada sel kanker.</p>
+    </div>
+    <div class="fitur">
+        <h3>17. Concavity SE</h3>
+        <p class="deskripsi">Mengukur standar error pada keparahan cekungan pada kontur inti sel. Ketidakkonsistenan dalam cekungan dapat mengindikasikan sifat sel yang invasif. Hal ini relevan dalam analisis perubahan bentuk seluler.</p>
+    </div>
+    <div class="fitur">
+        <h3>18. Concave Points SE</h3>
+        <p class="deskripsi">Standar error pada jumlah titik cekung menunjukkan ketidakseragaman pada struktur inti sel. Nilai yang tidak stabil sering kali berkaitan dengan sifat agresif sel kanker. Analisis ini penting untuk memahami kompleksitas kontur sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>19. Symmetry SE</h3>
+        <p class="deskripsi">Standar error pada simetri inti sel memberikan wawasan tentang tingkat perubahan pada struktur seluler. Sel yang tidak simetris cenderung memiliki risiko lebih tinggi untuk menjadi ganas. Data ini digunakan untuk mengidentifikasi perubahan abnormal.</p>
+    </div>
+    <div class="fitur">
+        <h3>20. Fractal Dimension SE</h3>
+        <p class="deskripsi">Mengukur standar error pada dimensi fraktal inti sel. Fitur ini menunjukkan kompleksitas kontur inti sel. Ketidakseragaman pada dimensi fraktal dapat mengindikasikan pertumbuhan sel yang tidak normal.</p>
+    </div>
+
+    <h2>Fitur Kasus Terburuk</h2>
+    <div class="fitur">
+        <h3>21. Radius Worst</h3>
+        <p class="deskripsi">Radius terbesar yang diamati pada inti sel memberikan gambaran tentang pertumbuhan maksimum sel. Nilai ini sering kali lebih besar pada sel kanker, mencerminkan proliferasi yang cepat. Radius yang lebih besar dapat menjadi indikator awal sifat ganas.</p>
+    </div>
+    <div class="fitur">
+        <h3>22. Texture Worst</h3>
+        <p class="deskripsi">Tekstur terburuk menggambarkan variasi maksimal pada permukaan inti sel. Tekstur yang tidak rata dengan deviasi tinggi adalah karakteristik umum sel kanker. Data ini digunakan untuk memisahkan sel sehat dari sel tidak normal.</p>
+    </div>
+    <div class="fitur">
+        <h3>23. Perimeter Worst</h3>
+        <p class="deskripsi">Perimeter terburuk menunjukkan panjang maksimum kontur inti sel. Nilai yang tinggi sering terkait dengan sel-sel kanker yang lebih besar dan tidak teratur. Fitur ini penting untuk mendeteksi pertumbuhan abnormal.</p>
+    </div>
+    <div class="fitur">
+        <h3>24. Area Worst</h3>
+        <p class="deskripsi">Luas maksimum inti sel mencerminkan ukuran sel terbesar yang terdeteksi. Sel kanker biasanya memiliki area yang jauh lebih besar dibandingkan dengan sel sehat. Luas yang lebih besar dapat mengindikasikan sifat ganas.</p>
+    </div>
+    <div class="fitur">
+        <h3>25. Smoothness Worst</h3>
+        <p class="deskripsi">Variasi maksimum pada panjang radius inti sel menunjukkan tingkat keparahan ketidakteraturan permukaan. Ketidakhalusan ini sering menjadi indikator penting dalam mendeteksi sel kanker. Nilai tinggi menunjukkan permukaan yang kasar dan abnormal.</p>
+    </div>
+    <div class="fitur">
+        <h3>26. Compactness Worst</h3>
+        <p class="deskripsi">Kekompakan terburuk menggambarkan bentuk sel yang paling abnormal. Nilai yang tinggi sering kali menunjukkan adanya deformasi struktur sel. Fitur ini sangat berguna dalam membedakan sel kanker dari sel sehat.</p>
+    </div>
+    <div class="fitur">
+        <h3>27. Concavity Worst</h3>
+        <p class="deskripsi">Keparahan maksimum pada cekungan inti sel memberikan indikasi tentang pertumbuhan sel yang tidak normal. Sel kanker cenderung memiliki cekungan yang lebih dalam dibandingkan sel sehat. Data ini relevan untuk analisis invasivitas sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>28. Concave Points Worst</h3>
+        <p class="deskripsi">Jumlah maksimum titik cekung pada kontur inti sel membantu mengidentifikasi tingkat deformasi seluler. Nilai yang lebih besar mengindikasikan kompleksitas struktur sel kanker. Analisis ini memberikan informasi penting tentang sifat pertumbuhan sel.</p>
+    </div>
+    <div class="fitur">
+        <h3>29. Symmetry Worst</h3>
+        <p class="deskripsi">Simetri terburuk mengukur tingkat asimetri maksimum pada inti sel. Sel kanker biasanya menunjukkan tingkat asimetri yang tinggi. Fitur ini membantu dalam mendeteksi perubahan patologis pada struktur seluler.</p>
+    </div>
+    <div class="fitur">
+        <h3>30. Fractal Dimension Worst</h3>
+        <p class="deskripsi">Dimensi fraktal maksimum menggambarkan kompleksitas kontur sel yang paling abnormal. Nilai yang tinggi sering ditemukan pada sel kanker dengan struktur kontur yang sangat tidak teratur. Data ini relevan untuk analisis kelainan struktural sel.</p>
+    </div>
+</body>
+</html>
