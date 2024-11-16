@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Image Upload</title>
+</head>
+<body>
+    <h1>Upload Patient Image</h1>
+    <form action="#" method="POST" id="patient-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Patient Image -->
+        <label for="patient-image">Upload Image:</label>
+        <input type="file" id="patient-image" name="patient_image" accept="image/*" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="prediction-result"></div>
+
+</body>
+
+<footer>
+    <script>
+ document.getElementById('patient-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Get the form data
+    const formData = new FormData(this);
+
+    // Get the CSRF token
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    // Log the data for debugging
+    console.log("Form Data Submitted: ", formData);
+
+    // Make the AJAX request
+    fetch('{% url "predictimage" %}', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrfToken,  // Add CSRF token to the request headers
+        },
+        body: formData,  // Send the form data (including image) as multipart/form-data
+    })
+    .then(response => response.json())
+    .then(result => {
+        const prediction = result.prediction;
+        document.getElementById('prediction-result').innerText = `Prediction: ${prediction}`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('prediction-result').innerText = 'An error occurred while processing the data.';
+    });
+});
+
+    </script>
+</footer>
+
+</html>
