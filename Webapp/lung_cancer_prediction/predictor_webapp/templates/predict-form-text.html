@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data Form</title>
+</head>
+<body>
+    <h1>Patient Data Input Form</h1>
+    <form action="#" method="POST" id="patient-form">
+        {% csrf_token %}
+        
+        <!-- Patient Name -->
+        <label for="patient-name">Nama Pasien:</label>
+        <input type="text" id="patient-name" name="patient_name" required><br><br>
+        
+        <!-- Average Metrics -->
+        <h2>Rata-rata</h2>
+        <label for="average-radius">Rata-rata Jari-jari:</label>
+        <input type="number" step="any" id="average-radius" name="average_radius" required><br><br>
+
+        <label for="average-texture">Rata-rata Tekstur:</label>
+        <input type="number" step="any" id="average-texture" name="average_texture" required><br><br>
+
+        <label for="average-perimeter">Rata-rata Perimeter:</label>
+        <input type="number" step="any" id="average-perimeter" name="average_perimeter" required><br><br>
+
+        <label for="average-area">Rata-rata Area:</label>
+        <input type="number" step="any" id="average-area" name="average_area" required><br><br>
+
+        <label for="average-smoothness">Rata-rata Kelicinan:</label>
+        <input type="number" step="any" id="average-smoothness" name="average_smoothness" required><br><br>
+
+        <label for="average-compactness">Rata-rata Kekompakan:</label>
+        <input type="number" step="any" id="average-compactness" name="average_compactness" required><br><br>
+
+        <label for="average-concavity">Rata-rata Cekungan:</label>
+        <input type="number" step="any" id="average-concavity" name="average_concavity" required><br><br>
+
+        <label for="average-concave-points">Rata-rata Titik Cekungan:</label>
+        <input type="number" step="any" id="average-concave-points" name="average_concave_points" required><br><br>
+
+        <label for="average-symmetry">Rata-rata Simetri:</label>
+        <input type="number" step="any" id="average-symmetry" name="average_symmetry" required><br><br>
+
+        <label for="average-fractal-dimension">Rata-rata Dimensi Fraktal:</label>
+        <input type="number" step="any" id="average-fractal-dimension" name="average_fractal_dimension" required><br><br>
+
+        <!-- Standard Error Metrics -->
+        <h2>Standar Error</h2>
+        <label for="se-radius">Standar Error Jari-jari:</label>
+        <input type="number" step="any" id="se-radius" name="se_radius" required><br><br>
+
+        <label for="se-texture">Standar Error Tekstur:</label>
+        <input type="number" step="any" id="se-texture" name="se_texture" required><br><br>
+
+        <label for="se-perimeter">Standar Error Perimeter:</label>
+        <input type="number" step="any" id="se-perimeter" name="se_perimeter" required><br><br>
+
+        <label for="se-area">Standar Error Area:</label>
+        <input type="number" step="any" id="se-area" name="se_area" required><br><br>
+
+        <label for="se-smoothness">Standar Error Kelicinan:</label>
+        <input type="number" step="any" id="se-smoothness" name="se_smoothness" required><br><br>
+
+        <label for="se-compactness">Standar Error Kekompakan:</label>
+        <input type="number" step="any" id="se-compactness" name="se_compactness" required><br><br>
+
+        <label for="se-concavity">Standar Error Cekungan:</label>
+        <input type="number" step="any" id="se-concavity" name="se_concavity" required><br><br>
+
+        <label for="se-concave-points">Standar Error Titik Cekungan:</label>
+        <input type="number" step="any" id="se-concave-points" name="se_concave_points" required><br><br>
+
+        <label for="se-symmetry">Standar Error Simetri:</label>
+        <input type="number" step="any" id="se-symmetry" name="se_symmetry" required><br><br>
+
+        <label for="se-fractal-dimension">Standar Error Dimensi Fraktal:</label>
+        <input type="number" step="any" id="se-fractal-dimension" name="se_fractal_dimension" required><br><br>
+
+        <!-- Worst Metrics -->
+        <h2>Terburuk</h2>
+        <label for="worst-radius">Jari-jari Terburuk:</label>
+        <input type="number" step="any" id="worst-radius" name="worst_radius" required><br><br>
+
+        <label for="worst-texture">Tekstur Terburuk:</label>
+        <input type="number" step="any" id="worst-texture" name="worst_texture" required><br><br>
+
+        <label for="worst-perimeter">Perimeter Terburuk:</label>
+        <input type="number" step="any" id="worst-perimeter" name="worst_perimeter" required><br><br>
+
+        <label for="worst-area">Area Terburuk:</label>
+        <input type="number" step="any" id="worst-area" name="worst_area" required><br><br>
+
+        <label for="worst-smoothness">Kelicinan Terburuk:</label>
+        <input type="number" step="any" id="worst-smoothness" name="worst_smoothness" required><br><br>
+
+        <label for="worst-compactness">Kekompakan Terburuk:</label>
+        <input type="number" step="any" id="worst-compactness" name="worst_compactness" required><br><br>
+
+        <label for="worst-concavity">Cekungan Terburuk:</label>
+        <input type="number" step="any" id="worst-concavity" name="worst_concavity" required><br><br>
+
+        <label for="worst-concave-points">Titik Cekungan Terburuk:</label>
+        <input type="number" step="any" id="worst-concave-points" name="worst_concave_points" required><br><br>
+
+        <label for="worst-symmetry">Simetri Terburuk:</label>
+        <input type="number" step="any" id="worst-symmetry" name="worst_symmetry" required><br><br>
+
+        <label for="worst-fractal-dimension">Dimensi Fraktal Terburuk:</label>
+        <input type="number" step="any" id="worst-fractal-dimension" name="worst_fractal_dimension" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="prediction-result"></div>
+
+</body>
+
+<footer>
+    <script>
+        document.getElementById('patient-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+            
+            // Get the form data
+            const formData = new FormData(this);
+            const data = {};
+
+            // Convert FormData to a plain object with numeric values where necessary
+            formData.forEach((value, key) => {
+                // Ensure that numeric values are parsed as floats
+                data[key] = parseFloat(value) || value;
+            });
+
+            // Get the CSRF token
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            // Log the data for debugging
+            console.log("Form Data Submitted: ", data);
+
+            // Make the AJAX request
+            fetch('{% url "predict_request" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,  // Add CSRF token to the request headers
+                },
+                body: JSON.stringify(data),  // Send the form data as JSON
+            })
+            .then(response => response.json())
+            .then(result => {
+                const prediction = result.prediction;
+                document.getElementById('prediction-result').innerText = `Prediction: ${prediction}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('prediction-result').innerText = 'An error occurred while processing the data.';
+            });
+        });
+    </script>
+</footer>
+
+</html>
