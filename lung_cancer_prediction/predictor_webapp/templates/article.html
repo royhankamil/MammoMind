@@ -22,8 +22,50 @@
         .deskripsi {
             margin-left: 20px;
         }
+        
+/* Navbar Styles */
+header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #007bff;
+}
+
     </style>
 </head>
+
+<header>
+    <div class="logo">MetaBlog</div>
+    <nav>
+        <a href="/imagepredict/">Predict From Ultrasound Image</a>
+        <a href="/formpredict/">Predict From Param</a>
+        <a href="/article/">Guide Article</a>
+        
+    </nav>
+</header>
 <body>
     <div class="latar-belakang">
         <h2>Latar Belakang</h2>

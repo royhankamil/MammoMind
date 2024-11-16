@@ -114,3 +114,7 @@ def image_predict(request):
 
     else:
         return JsonResponse({"error": "Invalid request method. Only POST is allowed."}, status=405)
+    
+
+def article(request):
+    return render(request, 'article.html')
