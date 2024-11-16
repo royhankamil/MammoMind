@@ -7,9 +7,10 @@
     {% load static%}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/form-image.css'%}">
+    
 </head>
 <header>
-    <div class="logo">MetaBlog</div>
+    <div class="logo">MammoMind</div>
     <nav>
         <a href="/imagepredict/">Predict From Ultrasound Image</a>
         <a href="/formpredict/">Predict From Param</a>
@@ -19,17 +20,26 @@
 </header>
 
 <body>
-    <h1>Upload Patient Image</h1>
-    <form action="#" method="POST" id="patient-form" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <!-- Patient Image -->
-        <label for="patient-image">Upload Image:</label>
-        <input type="file" id="patient-image" name="patient_image" accept="image/*" required><br><br>
+    <h1>Prediksi Kanker Payudara</h1>
+    <div class="predict-container">
 
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
-    </form>
+        <form action="#" method="POST" id="patient-form" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <!-- Patient Image -->
+            
+            <div class="file-drop-area" id="file-drop-area">
+                <input type="file" id="patient-image" name="patient_image" accept="image/*" required>
+                <span>Drag and drop an image here, or click to select one.</span>
+            </div>
+            <label id="file-name-display"></label>
+            <br><br>
+        
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
 
     <div id="prediction-result"></div>
 
@@ -38,7 +48,7 @@
 <footer>
     <script>
  document.getElementById('patient-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent the default form submission
+    event.preventDefault(); // Prevent the default form submission
 
     // Get the form data
     const formData = new FormData(this);
@@ -46,16 +56,13 @@
     // Get the CSRF token
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-    // Log the data for debugging
-    console.log("Form Data Submitted: ", formData);
-
     // Make the AJAX request
     fetch('{% url "predictimage" %}', {
         method: 'POST',
         headers: {
-            'X-CSRFToken': csrfToken,  // Add CSRF token to the request headers
+            'X-CSRFToken': csrfToken, // Add CSRF token to the request headers
         },
-        body: formData,  // Send the form data (including image) as multipart/form-data
+        body: formData, // Send the form data (including image) as multipart/form-data
     })
     .then(response => response.json())
     .then(result => {
@@ -67,6 +74,49 @@
         document.getElementById('prediction-result').innerText = 'An error occurred while processing the data.';
     });
 });
+
+// Drag and Drop functionality
+const fileDropArea = document.getElementById('file-drop-area');
+const fileInput = document.getElementById('patient-image');
+
+// Function to display the selected file name
+function displayFileName(file) {
+    const fileName = file.name;
+    const fileInfoDisplay = document.getElementById('file-name-display');
+    fileInfoDisplay.textContent = `Selected file: ${fileName}`;
+}
+
+// Drag-and-Drop Handlers
+fileDropArea.addEventListener('dragover', function(event) {
+    event.preventDefault(); // Allow the drop
+    fileDropArea.classList.add('dragover');
+});
+
+fileDropArea.addEventListener('dragleave', function(event) {
+    fileDropArea.classList.remove('dragover');
+});
+
+fileDropArea.addEventListener('drop', function(event) {
+    event.preventDefault();
+    fileDropArea.classList.remove('dragover');
+
+    // Get the file from the drop event
+    const files = event.dataTransfer.files;
+    if (files.length > 0) {
+        fileInput.files = files; // Set the dropped files to the input
+        displayFileName(files[0]); // Display the file name
+    }
+});
+
+// Input Change Handler
+fileInput.addEventListener('change', function() {
+    if (fileInput.files.length > 0) {
+        displayFileName(fileInput.files[0]); // Display the file name
+    }
+});
+
+
+
 
     </script>
 </footer>

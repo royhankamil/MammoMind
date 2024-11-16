@@ -1,19 +1,13 @@
 /* General Styles */
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins';
     margin: 0;
     padding: 0;
     background-color: #f4f6fc;
     color: #333;
+    overflow: hidden;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 30px;
-    font-size: 2em;
-}
 /* Navbar Styles */
 header {
     background-color: #ffffff;
@@ -44,35 +38,57 @@ header nav a {
 header nav a:hover {
     color: #007bff;
 }
-/* Form Styles */
-form {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 30px auto;
-    max-width: 600px;
+
+h1 {
+    margin-left: 9vw;
+    margin-top: 5vh;
+    font-size: 1.8em;
+    color: #252A32;
+    text-align: left;
+}
+
+/* File Drop Area */
+.file-drop-area {
+    margin-top: 5vh;
+    position: relative;
+    width: 50vw;
+    height: 55vh; /* Make the drop area larger */
+    border: 2px solid #007bff;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f7f9fc;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    color: #007bff;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-    font-size: 1.1em;
+.file-drop-area:hover {
+    background-color: #e7f1ff;
 }
 
-input[type="file"] {
+.file-drop-area input[type="file"] {
+    position: absolute;
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
+    height: 100%;
+    opacity: 0; /* Hide the default input */
+    cursor: pointer;
 }
 
+.file-drop-area span {
+    z-index: 1;
+}
+
+/* Drag and Drop Active Styles */
+.file-drop-area.dragover {
+    background-color: #e7f1ff;
+    border-color: #0056b3;
+}
+
+/* Submit Button Styles */
 button {
     background-color: #007bff;
     color: #ffffff;
@@ -99,15 +115,24 @@ button:hover {
     color: #0056b3;
 }
 
-/* Footer Styles */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f6fc;
-    margin-top: 40px;
+.predict-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-footer p {
+#patient-form button{
+    margin-left: -15vw;
     font-size: 1em;
-    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1vh;
+    background-color: #FFFFFF0D;
+    color: #4686FA;
+    border: solid 2px;
+    border-color: #4686FA;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
