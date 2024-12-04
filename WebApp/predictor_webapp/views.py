@@ -17,7 +17,7 @@ feature_extractor = Model(inputs=base_model.input, outputs=base_model.output)
 
 
 # Load the .h5 model for image prediction
-base_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the current script
+base_dir = os.path.dirname(os.path.abspath(__file__))
 h5_model_path = os.path.join(base_dir, 'breast-cancer-ultrasound.h5')
 pkl_model_path = os.path.join(base_dir, 'breast_cancer_prediction.pkl')
 
