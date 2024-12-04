@@ -10,16 +10,30 @@ from io import BytesIO
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Flatten
+import os
 
 base_model = VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 feature_extractor = Model(inputs=base_model.input, outputs=base_model.output)
 
 
 # Load the .h5 model for image prediction
-model = tf.keras.models.load_model(r'breast-cancer-ultrasound.h5')
+base_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of the current script
+h5_model_path = os.path.join(base_dir, 'breast-cancer-ultrasound.h5')
+pkl_model_path = os.path.join(base_dir, 'breast_cancer_prediction.pkl')
 
-# Load the .pkl model for text-based prediction (using joblib)
-pkl_model = joblib.load(r'breast_cancer_prediction.pkl')
+# Load the .h5 model
+try:
+    model = tf.keras.models.load_model(h5_model_path)
+    print("H5 model loaded successfully.")
+except FileNotFoundError as e:
+    print(f"Error loading H5 model: {e}")
+
+# Load the .pkl model
+try:
+    pkl_model = joblib.load(pkl_model_path)
+    print("PKL model loaded successfully.")
+except FileNotFoundError as e:
+    print(f"Error loading PKL model: {e}")
 
 def text_based_predict(request):
     return render(request, 'predict-form-text.html')
