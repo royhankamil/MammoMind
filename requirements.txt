@@ -1,0 +1,5 @@
+tensorflow>=2.9.1
+numpy>=1.19
+joblib>=1.0.1
+django>=3.2
+pillow>=8.0
