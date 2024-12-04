@@ -16,10 +16,10 @@ feature_extractor = Model(inputs=base_model.input, outputs=base_model.output)
 
 
 # Load the .h5 model for image prediction
-model = tf.keras.models.load_model(r'predictor_webapp\breast-cancer-ultrasound.h5')
+model = tf.keras.models.load_model(r'breast-cancer-ultrasound.h5')
 
 # Load the .pkl model for text-based prediction (using joblib)
-pkl_model = joblib.load(r'predictor_webapp\breast_cancer_prediction.pkl')
+pkl_model = joblib.load(r'breast_cancer_prediction.pkl')
 
 def text_based_predict(request):
     return render(request, 'predict-form-text.html')
