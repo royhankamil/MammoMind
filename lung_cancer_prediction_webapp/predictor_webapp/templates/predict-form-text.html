@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data Form</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'css/form-text.css'%}">
+</head>
+<div class="background-overlay"></div>
+<header>
+    <div class="logo">MammoMind</div>
+    <nav>
+        <a href="/imagepredict/">Prediksi Dari Gambar Ultrasound</a>
+        <a href="/formpredict/">Prediksi Dari Parameter</a>
+        <a href="/article/">Artikel Petunjuk</a>
+    </nav>
+</header>
+<body>
+    <h1>Prediksi Kanker Payudara</h1>
+    <form action="#" method="POST" id="patient-form">
+        {% csrf_token %}
+        <div class="container">
+            <div class="full-width">
+                <label for="patient-name">Nama Pasien:</label>
+                <input type="text" id="patient-name" name="patient_name" required>
+            </div>
+            <div class="input-2">
+                <label for="average-radius">Radius Mean</label>
+                <input type="number" step="any" id="average-radius" name="average_radius" required><br><br>
+            </div>
+            
+            <div class="input-3">
+                <label for="average-texture">Texture Mean</label>
+                <input type="number" step="any" id="average-texture" name="average_texture" required><br><br>
+            </div>
+            
+            <div class="input-4">
+                <label for="average-perimeter">Perimeter Mean</label>
+                <input type="number" step="any" id="average-perimeter" name="average_perimeter" required><br><br>
+            </div>
+            
+            <div class="input-5">
+                <label for="average-area">Area Mean</label>
+                <input type="number" step="any" id="average-area" name="average_area" required><br><br>
+            </div>
+            
+            <div class="input-6">
+                <label for="average-smoothness">Smoothness Mean</label>
+                <input type="number" step="any" id="average-smoothness" name="average_smoothness" required><br><br>
+            </div>
+            
+            <div class="input-7">
+                <label for="average-compactness">Compactness Mean</label>
+                <input type="number" step="any" id="average-compactness" name="average_compactness" required><br><br>
+            </div>
+            
+            <div class="input-8">
+                <label for="average-concavity">Concavity Mean</label>
+                <input type="number" step="any" id="average-concavity" name="average_concavity" required><br><br>
+            </div>
+            
+            <div class="input-9">
+                <label for="average-concave-points">Concave Points Mean</label>
+                <input type="number" step="any" id="average-concave-points" name="average_concave_points" required><br><br>
+            </div>
+            
+            <div class="input-10">
+                <label for="average-symmetry">Symmetry Mean</label>
+                <input type="number" step="any" id="average-symmetry" name="average_symmetry" required><br><br>
+            </div>
+            
+            <div class="input-11">
+                <label for="average-fractal-dimension">Fractal Dimension Mean</label>
+                <input type="number" step="any" id="average-fractal-dimension" name="average_fractal_dimension" required><br><br>
+            </div>
+            
+            <!-- Standard Error Metrics -->
+            <div class="input-12">
+                <label for="se-radius"> Radius SE</label>
+                <input type="number" step="any" id="se-radius" name="se_radius" required><br><br>
+            </div>
+            
+            <div class="input-13">
+                <label for="se-texture">Texture SE</label>
+                <input type="number" step="any" id="se-texture" name="se_texture" required><br><br>
+            </div>
+            
+            <div class="input-14">
+                <label for="se-perimeter">Perimeter SE</label>
+                <input type="number" step="any" id="se-perimeter" name="se_perimeter" required><br><br>
+            </div>
+            
+            <div class="input-15">
+                <label for="se-area">Area SE</label>
+                <input type="number" step="any" id="se-area" name="se_area" required><br><br>
+            </div>
+            
+            <div class="input-16">
+                <label for="se-smoothness">Smoothness SE</label>
+                <input type="number" step="any" id="se-smoothness" name="se_smoothness" required><br><br>
+            </div>
+            
+            <div class="input-17">
+                <label for="se-compactness">Compactness SE</label>
+                <input type="number" step="any" id="se-compactness" name="se_compactness" required><br><br>
+            </div>
+            
+            <div class="input-18">
+                <label for="se-concavity">Concavity SE</label>
+                <input type="number" step="any" id="se-concavity" name="se_concavity" required><br><br>
+            </div>
+            
+            <div class="input-19">
+                <label for="se-concave-points">Concave Points SE</label>
+                <input type="number" step="any" id="se-concave-points" name="se_concave_points" required><br><br>
+            </div>
+            
+            <div class="input-20">
+                <label for="se-symmetry">Symmetry SE</label>
+                <input type="number" step="any" id="se-symmetry" name="se_symmetry" required><br><br>
+            </div>
+            
+            <div class="input-21">
+                <label for="se-fractal-dimension">Fractal Dimension SE</label>
+                <input type="number" step="any" id="se-fractal-dimension" name="se_fractal_dimension" required><br><br>
+            </div>
+            
+            <!-- Worst Metrics -->
+            <div class="input-22">
+                <label for="worst-radius">Radius Worst</label>
+                <input type="number" step="any" id="worst-radius" name="worst_radius" required><br><br>
+            </div>
+            
+            <div class="input-23">
+                <label for="worst-texture">Texture Worst</label>
+                <input type="number" step="any" id="worst-texture" name="worst_texture" required><br><br>
+            </div>
+            
+            <div class="input-24">
+                <label for="worst-perimeter">Perimeter Worst</label>
+                <input type="number" step="any" id="worst-perimeter" name="worst_perimeter" required><br><br>
+            </div>
+            
+            <div class="input-25">
+                <label for="worst-area">Area Worst</label>
+                <input type="number" step="any" id="worst-area" name="worst_area" required><br><br>
+            </div>
+            
+            <div class="input-26">
+                <label for="worst-smoothness">Smoothness Worst</label>
+                <input type="number" step="any" id="worst-smoothness" name="worst_smoothness" required><br><br>
+            </div>
+            
+            <div class="input-27">
+                <label for="worst-compactness">Compactness Worst</label>
+                <input type="number" step="any" id="worst-compactness" name="worst_compactness" required><br><br>
+            </div>
+            
+            <div class="input-28">
+                <label for="worst-concavity">Concavity Worst</label>
+                <input type="number" step="any" id="worst-concavity" name="worst_concavity" required><br><br>
+            </div>
+            
+            <div class="input-29">
+                <label for="worst-concave-points">Concave Points Worst</label>
+                <input type="number" step="any" id="worst-concave-points" name="worst_concave_points" required><br><br>
+            </div>
+            
+            <div class="input-30">
+                <label for="worst-symmetry">Symmetry Worst</label>
+                <input type="number" step="any" id="worst-symmetry" name="worst_symmetry" required><br><br>
+            </div>
+            
+            <div class="input-31">
+                <label for="worst-fractal-dimension">Fractal Dimension Worst</label>
+                <input type="number" step="any" id="worst-fractal-dimension" name="worst_fractal_dimension" required><br><br>
+            </div>
+
+        </div>
+
+            
+        <!-- Submit Button -->
+        
+        </div>
+    <!-- Patient Name -->
+    
+    <button type="submit">Prediksi</button>
+    </form>
+    <div class="prediction-container">
+        <div id="prediction-result"></div>
+        <div id="prediction-recommendation">Tetap Jaga Kesehatan</div>
+    </div>
+    
+
+</body>
+
+<footer>
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+        input.value = '0';
+        });
+
+        document.getElementById('patient-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+            
+            // Get the form data
+            const formData = new FormData(this);
+            const data = {};
+
+            // Convert FormData to a plain object with numeric values where necessary
+            formData.forEach((value, key) => {
+                // Ensure that numeric values are parsed as floats
+                data[key] = parseFloat(value) || value;
+            });
+
+            // Get the CSRF token
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            // Log the data for debugging
+            console.log("Form Data Submitted: ", data);
+
+            // Make the AJAX request
+            fetch('{% url "predict_request" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken,  // Add CSRF token to the request headers
+                },
+                body: JSON.stringify(data),  // Send the form data as JSON
+            })
+            .then(response => response.json())
+            .then(result => {
+                const prediction = result.prediction;
+                document.getElementById('prediction-result').innerText = `${prediction}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('prediction-result').innerText = 'An error occurred while processing the data.';
+            });
+        });
+    </script>
+</footer>
+</html>
