@@ -1,6 +1,17 @@
-# breast-Cancer-Predictor
+# MammoMind : Breast Cancer Predictor
 
-Instructions to Run the Breast Cancer Predictor Application
+This project is a local web application for breast cancer prediction using ultrasound imaging, an affordable alternative to mammography and MRI.
+It supports two input modes:
+
+Numeric features (e.g., radius mean, texture mean, perimeter)
+
+Ultrasound images
+
+I developed the machine learning pipeline for numeric data and built deep learning models for image inputs using Python, TensorFlow, and PyTorch. We experimented with multiple models to achieve the highest accuracy.
+
+The project was completed in 3–4 weeks in collaboration with a teammate.
+
+## Instructions to Run the Breast Cancer Predictor Application
 Prerequisites
 
 Ensure that you have the following installed:
